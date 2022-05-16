@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{%  static 'polls/style.css' %}">
+</head>
+<body>
+<p><b>Hello : {{my_name}}</b></p>
+
+<div class="block 1">
+    {% block content_question%}
+    {%endblock%}
+</div>
+</body>
+</html>

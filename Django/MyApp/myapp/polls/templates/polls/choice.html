@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+{% block content_question %}
+<form method="POST" action="{% url 'result' question.id %}">
+{% if question %}
+<div class ="question1">
+<h1>{{question.question_text}}</h1>
+</div>
+<ul>
+{% for item in list_choice %}
+<li><input type="radio" name="choice" value="{{item.id}}"/>{{item.choice_text}}</li>
+{% endfor %}
+</ul>
+<input type="submit" value="Submit">
+{% endif %}
+</form>
+{% endblock %}
