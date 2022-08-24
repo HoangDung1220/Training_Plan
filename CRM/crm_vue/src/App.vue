@@ -27,6 +27,7 @@ export default {
     } else {
       axios.defaults.headers.common['Authorization'] = ""
     }
+    console.log(this.$store.state.token)
   }
   
 }

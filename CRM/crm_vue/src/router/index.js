@@ -6,7 +6,8 @@ import MyAccount from '../views/dashboard/MyAccount.vue'
 import Dashboard from '../views/dashboard/Dashboard.vue'
 import Leads from '../views/dashboard/Leads'
 import AddLead from '../views/dashboard/AddLead'
-
+import Lead from '../views/dashboard/Lead'
+import EditLead from '../views/dashboard/EditLead.vue'
 import store from '../store'
 
 const routes = [
@@ -58,13 +59,30 @@ const routes = [
     }
   },
   {
+    path : '/dashboard/leads/:id',
+    name :'Lead',
+    component : Lead,
+    meta : {
+      requireLogin :true
+    }
+  },
+  {
+    path :'/dashboard/editLead/:id',
+    name : 'EditLead',
+    component : EditLead,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
     path :'/dashboard/addlead',
     name : 'AddLead',
     component : AddLead,
     meta: {
       requireLogin: true
     }
-  }
+  },
+  
 ]
 
 const router = createRouter({
