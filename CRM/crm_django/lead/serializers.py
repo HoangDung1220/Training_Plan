@@ -6,7 +6,7 @@ class LeadSerializer(serializers.ModelSerializer):
         read_only_fields = (
             'created_by',
             'created_at',
-            'modified_at',
+            'updated_at',
         ),
         fields = (
                     'id',
@@ -19,7 +19,6 @@ class LeadSerializer(serializers.ModelSerializer):
                     'estimated_value',
                     'status',
                     'priority',
-                    'created_by',
                     'created_at',
-                    'modified_at',
+                    'updated_at',
                 )

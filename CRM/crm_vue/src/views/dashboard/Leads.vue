@@ -3,6 +3,7 @@
     <div class="columns is-multiline">
         <div class="column is-12">
             <div class="title">Leads</div>
+            <router-link to="/dashboard/addlead">Add Lead</router-link>
         </div>
 
         <div class="column is-12">
@@ -12,6 +13,7 @@
                         <th>Company</th>
                         <th>Contact person</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
@@ -20,6 +22,7 @@
                         <td>{{lead.company}}</td>
                         <td>{{lead.contact_person}}</td>
                         <td>{{lead.status}}</td>
+                        <th><router-link :to="{name : 'Lead',params :{id : lead.id}}">Detail</router-link></th>
                     </tr>
                 </tbody>
             </table>
@@ -48,7 +51,7 @@ export default {
         async getLeads(){
             this.$store.commit('setIsLoading',true)
             await axios
-                    .get('/api/v1/leads',{mode: 'no-cors'})
+                    .get('/api/v1/leads/')
                     .then(response =>{
                         this.leads = response.data
                         console.log(this.leads)
