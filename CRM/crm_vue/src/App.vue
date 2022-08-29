@@ -27,7 +27,13 @@ export default {
     } else {
       axios.defaults.headers.common['Authorization'] = ""
     }
-    console.log(this.$store.state.token)
+
+    console.log(this.$store.state.team)
+    if (!this.$store.state.team.id){
+          console.log('alo')
+
+      this.$router.push('/dashboard/addTeam')
+    }
   }
   
 }

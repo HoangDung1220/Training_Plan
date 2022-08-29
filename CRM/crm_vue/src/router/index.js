@@ -8,6 +8,16 @@ import Leads from '../views/dashboard/Leads'
 import AddLead from '../views/dashboard/AddLead'
 import Lead from '../views/dashboard/Lead'
 import EditLead from '../views/dashboard/EditLead.vue'
+import AddTeam from '../views/dashboard/AddTeam'
+import AddMember from '../views/dashboard/AddMember'
+import AddClient from '../views/dashboard/AddClient'
+import Clients from '../views/dashboard/Clients'
+import Team from '../views/dashboard/Team'
+import Client from '../views/dashboard/Client'
+import EditClient from '../views/dashboard/EditClient'
+import AddNote from '../views/dashboard/AddNote'
+import EditMember from '../views/dashboard/EditMember'
+import Plans from '../views/dashboard/Plans'
 import store from '../store'
 
 const routes = [
@@ -82,7 +92,86 @@ const routes = [
       requireLogin: true
     }
   },
-  
+  {
+    path :'/dashboard/addTeam',
+    name : 'AddTeam',
+    component : AddTeam,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path :'/dashboard/addMember',
+    name : 'AddMember',
+    component : AddMember,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path :'/dashboard/team',
+    name : 'Team',
+    component : Team,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path :'/dashboard/addClient',
+    name : 'AddClient',
+    component : AddClient,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path :'/dashboard/Clients',
+    name : 'Clients',
+    component : Clients,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path :'/dashboard/Clients/:id',
+    name : 'Client',
+    component : Client,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path :'/dashboard/EditClients/:id',
+    name : 'EditClient',
+    component : EditClient,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path :'/dashboard/addNote',
+    name : 'AddNote',
+    component : AddNote,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path :'/dashboard/editmember/:id',
+    name : 'EditMember',
+    component : EditMember,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path :'/dashboard/plans',
+    name : 'Plans',
+    component : Plans,
+    meta: {
+      requireLogin: true
+    }
+  }
 ]
 
 const router = createRouter({
