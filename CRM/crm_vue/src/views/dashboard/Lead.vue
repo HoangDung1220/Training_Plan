@@ -4,12 +4,15 @@
             <div class="column is-12">
                 <h1 class="title">Detail {{lead.company}}</h1>
                 <div class="buttons">
-                    <router-link :to="{ name : 'EditLead',params :{ id : 5}}">Edit</router-link>
+                    <button @click="convertToClient" class="button is-info">Convert to client</button>
+                    <router-link :to="{ name : 'EditLead',params :{ id : 5}}" class="button is-info">Edit</router-link>
+
                 </div>
             </div>
             <div class="column is-6">
                 <div class="box">
                     <h2 class="subtitle">Details</h2>
+                    <p><strong>Assigned_to :</strong>{{lead.assigned_to}}</p>
                     <p><strong>Status :</strong> {{lead.status}}</p>
                     <p><strong>Priority :</strong> {{lead.priority}}</p>
                     <p><strong>Confidence :</strong> {{lead.confidence}}</p>
@@ -53,7 +56,7 @@ export default {
                 .get(`/api/v1/leads/${id}/`)
                 .then(response=>{
                     this.lead = response.data
-                    console.log(this.lead)
+                    console.log(this.lead.id)
                 }
                 )
                 .catch(error =>{
@@ -61,6 +64,20 @@ export default {
                 })
             this.$store.commit('setIsLoading',false)
         },
+
+        convertToClient(){
+           
+            axios
+            .post(`/api/v1/convert_lead_to_client/`,{'lead_id':this.lead.id})
+            .then(response =>{
+                console.log(response)
+                this.$router.push('/dashboard/clients')
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+            
+        }
 
     }
 }

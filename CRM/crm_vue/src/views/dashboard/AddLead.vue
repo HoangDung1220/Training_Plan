@@ -83,6 +83,8 @@
                         </div>
                     </div>
 
+                   
+
                     <div class="field">
                         <div class="control">
                             <button class="button is-success">Submit</button>
@@ -111,7 +113,7 @@ export default {
             confidence: 0,
             website: '',
             status: 'New',
-            priority: 'Medium'
+            priority: 'Medium',
         }
     },
     methods:{

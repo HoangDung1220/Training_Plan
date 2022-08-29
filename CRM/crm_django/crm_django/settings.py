@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'djoser',
     'lead.apps.LeadConfig',
-    'team.apps.TeamConfig'
+    'team.apps.TeamConfig',
+    'client.apps.ClientConfig',
 ]
 
 CORS_ALLOWED_ORIGINS = [
